@@ -2,16 +2,17 @@ import os
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    help_text = (
-        "⚡ *TradeLab AI Bot Commands* ⚡\n\n"
-        "/start \- Welcome screen and current trader rank\n"
-        "/help \- Display this breakdown list\n"
-        "/quiz \- Challenge yourself with an SMC technical question\n"
-        "/coach `<prompt>` \- Consult your senior Wall Street AI Coach\n"
-        "/journal_add `<text>` \- Log a trade setup into your trading journal\n"
-        "/journal \- Review your stored journal entries\n\n"
-        "📷 *Tip:* Send a chart screenshot directly to run the AI Vision Market Structure Filter (BOS, CHoCH, FVG, OB detection)!"
+        help_text = (
+        r"⚡ *TradeLab AI Bot Commands* ⚡" + "\n\n"
+        r"/start \- Welcome screen and current status" + "\n"
+        r"/help \- Display this breakdown list of commands" + "\n"
+        r"/quiz \- Challenge yourself with an SMC quiz question" + "\n"
+        r"/coach `<prompt>` \- Consult your senior Wall Street AI mentor" + "\n"
+        r"/journal_add `<text>` \- Log a trade entry" + "\n"
+        r"/journal \- Review your stored journal entries" + "\n"
+        r"📷 *Tip:* Send a chart screenshot directly to get analysis"
     )
+
     await update.message.reply_text(help_text, parse_mode="MarkdownV2")
 
 async def quiz(update: Update, context: ContextTypes.DEFAULT_TYPE):
